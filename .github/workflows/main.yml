@@ -30,6 +30,9 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew assemble
 
+      - name: Set NODE_OPTIONS
+        run: echo "NODE_OPTIONS=--openssl-legacy-provider" >> $GITHUB_ENV
+
       - name: Test with Gradle
         run: ./gradlew test
 
